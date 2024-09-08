@@ -6,7 +6,7 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 ---
 <MainLayout title="Titel">
 
-	<section class="grid lg:grid-cols-3 lg:mt-28">
+	<section class="grid lg:grid-cols-3 lg:mt-28 mitelement">
 		<div class="col-span-2"><img src="cover.jpg" alt="cover af bog" class="h-4/5"></div>
 		<div class="pr-8">
 			<h2 class="text-4xl font-bold pb-4">Københavnerbilleder - </h2>
@@ -16,7 +16,7 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 	</section>
 <article class="max-w-screen-xl mx-auto px-4">
 	
-		<section class="gap-5 grid md:grid-cols-2 md:mx-4 mt-28 lg:mx-28 ">
+		<section class="gap-5 grid md:grid-cols-2 md:mx-4 mt-28 lg:mx-28 slide">
 				<ul class="sm:px-3">
 					<li>Titel: Københavnerbilleder - en guide til hipster foto</li>
 					<li>Forfatter: Sten Simons</li>
@@ -114,18 +114,14 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 					Derefter tog karrieren fart: Han blev fotojournalist og dokumenterede en masse dagligdagsstof fra Amager på dagbladet “Amagerkaneren.” Sideløbende begyndte han at undervise i foto, og har skrevet et utal af bøger, herunder bestsellerne Scener fra S-toget, Brun mad - en visuel odysse, og lærebogen Fotografering for evnesvage.</p>
 			</article>
 		</section>
-		<section class="lg:mx-9 mt-28" id="bog">
+		<section class="max-w-lg mx-auto mt-28" id="køb">
 			<h3 class="text-1xl font-bold">Form</h3>
 	
 			<form class="space-y-4 grid grid-cols-1 gap-6">
 	
 				<div class="">
-					<label for="antal">Vælg antal:</label>					
-					<select name="kursusgang" id="kursusgang">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-					</select>
+					<label for="kursusgang">Antal:</label>					
+					<input type="number" class="ml-20" />
 				</div>
 	
 				<div class="">
@@ -171,9 +167,14 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 			</form>
 		</section>
 </article>
-	<!-- <article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-	</article>-->
 </MainLayout>
+
+<script>
+	import { inView } from "motion";
+	const inviewelement2 = document.querySelector(".load2");
+	inView(
+		inviewelement2, () => {
+			inviewelement2.classList.add("slide-top")
+		}
+	)
+</script>
