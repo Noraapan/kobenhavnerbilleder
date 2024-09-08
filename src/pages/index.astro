@@ -31,9 +31,9 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 		<section class="grid lg:grid-cols-3 gap-2 mt-28">
 			<img src="kobenhavnerbilleder_aaben_venstre.jpg" alt="billede af bog">
 			<img src="kobenhavnerbilleder_oppefra.jpg" alt="billede af bogen">
-			<img src="coverbillede.jpg" alt="billede af bogen">
+			<img src="cover.jpg" alt="billede af bogen">
 		</section>
-		<section class="mt-28">
+		<section class="mt-28" id="kapitlerne">
 			<h2 class="text-4xl font-bold pb-4">Bogens kapitler</h2>
 			<div class="grid lg:grid-cols-2">
 				<article class="px-12">
@@ -86,7 +86,7 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 				</Anmeldelser>
 			</div>
 		</section>
-		<section class="mt-28">
+		<section class="mt-28" id="galleri">
 			<h3 class="text-1xl font-bold pb-2">Billeder fra bogen</h3>
 			<article class="grid md:grid-cols-3 lg:grid-cols-4">
 				<img src="bild2.jpg" alt="billeder af bogen" class="p-1">
@@ -114,13 +114,13 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 					Derefter tog karrieren fart: Han blev fotojournalist og dokumenterede en masse dagligdagsstof fra Amager på dagbladet “Amagerkaneren.” Sideløbende begyndte han at undervise i foto, og har skrevet et utal af bøger, herunder bestsellerne Scener fra S-toget, Brun mad - en visuel odysse, og lærebogen Fotografering for evnesvage.</p>
 			</article>
 		</section>
-		<section class="lg:mx-9 mt-28">
+		<section class="lg:mx-9 mt-28" id="bog">
 			<h3 class="text-1xl font-bold">Form</h3>
 	
 			<form class="space-y-4 grid grid-cols-1 gap-6">
 	
 				<div class="">
-					<label for="kursusgang">Kursusgang:</label>					
+					<label for="antal">Vælg antal:</label>					
 					<select name="kursusgang" id="kursusgang">
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -165,7 +165,7 @@ import Anmeldelser from "../components/Anmeldelser.astro";
 					<label for="nyhedsbrev">Ja tak til nyhedsbreve og tilbud</label>
 				</div>
 	
-				<div class="flex justify-end hover:flip-horizontal-bottom">
+				<div class="flex justify-end">
 					<Button variant="primary" size="medium">Til betaling</Button>
 				</div>
 			</form>
